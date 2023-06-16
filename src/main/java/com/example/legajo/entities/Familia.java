@@ -1,4 +1,4 @@
-package com.example.legajo;
+package com.example.legajo.entities;
 
 import jakarta.persistence.*;
 
@@ -15,7 +15,7 @@ public class Familia {
     private String a_cargo;
     private String nivel_escolaridad;
     private String tipo_institucion;
-    private boolean discapacidad;
+    private String discapacidad;
     private String descripcion_discapacidad;
     private int edad;
 
@@ -23,7 +23,7 @@ public class Familia {
     public Familia() {
     }
 
-    public Familia(Long id, String parentesco, String nombre_apellido, String a_cargo, String nivel_escolaridad, String tipo_institucion, boolean discapacidad, String descripcion_discapacidad, int edad) {
+    public Familia(Long id, String parentesco, String nombre_apellido, String a_cargo, String nivel_escolaridad, String tipo_institucion, String discapacidad, String descripcion_discapacidad, int edad) {
         this.id = id;
         this.parentesco = parentesco;
         this.nombre_apellido = nombre_apellido;
@@ -35,7 +35,7 @@ public class Familia {
         this.edad = edad;
     }
 
-    public Familia(String parentesco, String nombre_apellido, String a_cargo, String nivel_escolaridad, String tipo_institucion, boolean discapacidad, String descripcion_discapacidad, int edad) {
+    public Familia(String parentesco, String nombre_apellido, String a_cargo, String nivel_escolaridad, String tipo_institucion, String discapacidad, String descripcion_discapacidad, int edad) {
         this.parentesco = parentesco;
         this.nombre_apellido = nombre_apellido;
         this.a_cargo = a_cargo;
@@ -94,11 +94,11 @@ public class Familia {
         this.tipo_institucion = tipo_institucion;
     }
 
-    public boolean isDiscapacidad() {
+    public String getDiscapacidad() {
         return discapacidad;
     }
 
-    public void setDiscapacidad(boolean discapacidad) {
+    public void setDiscapacidad(String discapacidad) {
         this.discapacidad = discapacidad;
     }
 

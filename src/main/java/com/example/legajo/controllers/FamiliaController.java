@@ -1,5 +1,7 @@
-package com.example.legajo;
+package com.example.legajo.controllers;
 
+import com.example.legajo.entities.Familia;
+import com.example.legajo.services.FamiliaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -7,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(path = "api/v1/familia")
 public class FamiliaController {
     private final FamiliaService familiaService;
@@ -22,7 +25,11 @@ public class FamiliaController {
         return this.familiaService.getFamilia();
     }
 
+    @GetMapping(path = "/cargo")
+    public List<String> getFamiliarCargo() { return this.familiaService.getFamiliarCargo();}
 
+    @GetMapping(path = "/nombre_apellido")
+    public List<String> getNombreApellido() { return this.familiaService.getNombreApellido();}
     @PostMapping
     public ResponseEntity<Object> registrarFamilia(@RequestBody Familia familia){
         return this.familiaService.newFamilia(familia);
